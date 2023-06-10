@@ -25,7 +25,6 @@ call plug#end()
 
 lua << EOF
 
-
 -- Gitマーカーの設定
 require('gitsigns').setup {}
 
@@ -147,6 +146,7 @@ local enable_format_on_save = function(_, bufnr)
       vim.lsp.buf.format({ bufnr = bufnr })
     end,
   })
+end
 end
   
 nvim_lsp.tsserver.setup {
