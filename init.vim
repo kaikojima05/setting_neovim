@@ -2,6 +2,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'prettier/vim-prettier', {'do': 'npm install'}
 Plug 'svrana/neosolarized.nvim'
 Plug 'tjdevries/colorbuddy.nvim'
 Plug 'nvim-lualine/lualine.nvim'
