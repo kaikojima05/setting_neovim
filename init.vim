@@ -275,7 +275,7 @@ vim.keymap.set('n', ';f',
 vim.keymap.set('n', ';r', function()
   builtin.live_grep()
 end)
-vim.keymap.set('n', '\\\\', function()
+vim.keymap.set('n', ';b', function()
   builtin.buffers()
 end)
 vim.keymap.set('n', ';t', function()
@@ -360,6 +360,9 @@ vim.keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
 
 EOF
 
+
+" prettier のautocmd の設定
+autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.json,*.scss,*.less PrettierAsync
 
 " ターミナルが256色設定できるようにする"
 set termguicolors
