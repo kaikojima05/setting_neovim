@@ -390,12 +390,14 @@ set clipboard+=unnamed
 " help の日本語化
 set helplang=ja
 
-" ノーマルモードの設定
-nnoremap <Space>h ^
+" ノーマルモードの設定noremap <Space>h ^
 nnoremap <Space>l $
 nnoremap dh d0
 nnoremap dl d$
 nnoremap nd :Explore<CR>
+nnoremap ns :vsp<CR>
+nnoremap vsl <C-w>l
+nnoremap vsh <C-w>h
 
 " インサートモードの設定
 inoremap <silent> jj <ESC>
