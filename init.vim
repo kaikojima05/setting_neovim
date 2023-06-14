@@ -392,6 +392,7 @@ set helplang=ja
 
 " ノーマルモードの設定noremap <Space>h ^
 nnoremap <Space>l $
+nnoremap <Space>h ^
 nnoremap dh d0
 nnoremap dl d$
 nnoremap nd :Explore<CR>
