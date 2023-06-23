@@ -377,8 +377,11 @@ set encoding=utf-8
 scriptencoding utf-8
 
 " インデントの設定
-set list
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set nolist
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
 
 " 行番号
 set number
