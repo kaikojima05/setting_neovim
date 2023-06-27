@@ -20,6 +20,7 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'MunifTanjim/prettier.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'dinhhuy258/git.nvim'
+Plug 'glepnir/lspsaga.nvim'
 
 call plug#end()
 
@@ -152,10 +153,37 @@ end
   
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
   cmd = { "typescript-language-server", "--stdio" }
 }
 
+nvim_lsp.intelephense.setup {
+    on_attach = on_attach,
+    cmd = { "intelephense", "--stdio" },
+    filetypes = { "php", "phtml" }
+}
+
+
+-- LSP の拡張機能
+local status, saga = pcall(require, "lspsaga")
+if (not status) then return end
+
+local saga = require 'lspsaga'
+saga.setup {
+  server_filetype_map = {
+    typescript = 'typescript',
+    javascript = 'javascript',
+    php = 'php'
+  }
+}
+
+local opts = { noremap = true, silent = true }
+vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
+vim.keymap.set('n', 'rk', '<Cmd>Lspsaga lsp_finder<CR>', opts)
+vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
+vim.keymap.set('n', 'rp', '<Cmd>Lspsaga peek_definition<CR>', opts)
+vim.keymap.set('n', 'rw', '<Cmd>Lspsaga rename<CR>', opts)
 
 -- 自動補完の設定
 local status, cmp = pcall(require, "cmp")
@@ -316,7 +344,8 @@ prettier.setup {
     "typescriptreact",
     "json",
     "scss",
-    "less"
+    "less", 
+    "php"
   }
 }
 
@@ -363,7 +392,7 @@ EOF
 
 
 " prettier のautocmd の設定
-autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.json,*.scss,*.less PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.html,*.json,*.graphql,*.md,*.vue,*.yaml,*.php PrettierAsync
 
 " ターミナルが256色設定できるようにする"
 set termguicolors
