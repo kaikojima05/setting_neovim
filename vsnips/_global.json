@@ -1,0 +1,15 @@
+{
+  "Snippet Template": {
+    "prefix": "snt",
+    "body": [
+      "\"${1:}\": {",
+      "  \"prefix\": \"${2:}\",",
+      "  \"body\": [",
+      "    \"${3:}\"",
+      "  ],",
+      "  \"description\": \"${4:}\"",
+      "}"
+    ],
+    "description": ""
+  }
+}

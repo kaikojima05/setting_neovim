@@ -21,6 +21,8 @@ Plug 'MunifTanjim/prettier.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'dinhhuy258/git.nvim'
 Plug 'glepnir/lspsaga.nvim'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 
 call plug#end()
 
@@ -388,11 +390,80 @@ bufferline.setup({
 vim.keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
 vim.keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
 
+
+-- vnips の設定
+local cmp = require'cmp'
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body) -- crucial for vsnip integration
+    end,
+  },
+  mapping = {
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-n>'] = cmp.mapping.select_next_item(),
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4), 
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm({
+    behavior = cmp.ConfirmBehavior.Replace,
+    select = true,
+  }),
+  ['<Tab>'] = function(fallback)
+      if vim.fn.pumvisible() == 1 then
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n')
+      elseif vim.fn.call("vsnip#available", {1}) == 1 then
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>(vsnip-expand-or-jump)', true, true, true), '')
+      else
+        fallback()
+      end
+    end,
+    ['<S-Tab>'] = function(fallback)
+      if vim.fn.pumvisible() == 1 then
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'n')
+      elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>(vsnip-jump-prev)', true, true, true), '')
+      else
+        fallback()
+      end
+    end,
+  },
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'vsnip' }, -- add vsnip source
+    { name = 'buffer' },
+  },
+}
+
 EOF
 
 
 " prettier のautocmd の設定
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.html,*.json,*.graphql,*.md,*.vue,*.yaml,*.php PrettierAsync
+
+" vsnips の import 先
+let g:vsnip_snippet_dir = '~/.config/nvim/vsnips'
+let g:vsnip_filetypes = {}
+let g:vsnip_filetypes.javascript = ['javascript', 'html']
+let g:vsnip_filetypes.javascriptreact = ['javascriptreact', 'javascript', 'html']
+let g:vsnip_filetypes.typescript = ['typescript', 'html']
+let g:vsnip_filetypes.typescriptreact = ['typescriptreact', 'typescript', 'html']
+
+" vsnips のキーバインド
+" Expand
+imap <expr> <C-j>   vsnip#available(1)  ? '<Plug>(vsnip-expand)'         : '<C-j>'
+smap <expr> <C-j>   vsnip#available(1)  ? '<Plug>(vsnip-expand)'         : '<C-j>'
+
+" Expand or jump
+imap <expr> <C-l>   vsnip#expandable()  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+smap <expr> <C-l>   vsnip#expandable()  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+
+" Jump forward or backward
+imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 
 " ターミナルが256色設定できるようにする"
 set termguicolors
@@ -431,6 +502,9 @@ nnoremap nd :Explore<CR>
 nnoremap ns :vsp<CR>
 nnoremap vsl <C-w>l
 nnoremap vsh <C-w>h
+nnoremap ;d  "_d
+nnoremap ;dd "_dd
+nnoremap ;dw "_dw
 
 " インサートモードの設定
 inoremap <silent> jj <ESC>
@@ -443,3 +517,6 @@ inoremap , ,<Space>
 inoremap : :<Space>
 
 " ヴィジュアルモードの設定
+vnoremap ;d  "_d
+vnoremap ;dd "_dd
+vnoremap ;dw "_dw
