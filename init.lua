@@ -1,8 +1,8 @@
 vim.g.vsnip_filetypes = {
-  javascript = {'javascript', 'html'},
-  javascriptreact = {'javascriptreact', 'javascript', 'html'},
-  typescript = {'typescript', 'html'},
-  typescriptreact = {'typescriptreact', 'typescript', 'html'},
+  javascript = { 'javascript', 'html' },
+  javascriptreact = { 'javascriptreact', 'javascript', 'html' },
+  typescript = { 'typescript', 'html' },
+  typescriptreact = { 'typescriptreact', 'typescript', 'html' },
 }
 
 require 'lspconfig'.lua_ls.setup {
