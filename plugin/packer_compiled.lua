@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/kojimagai/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ale = {
+    loaded = true,
+    path = "/Users/kojimagai/.local/share/nvim/site/pack/packer/start/ale",
+    url = "https://github.com/dense-analysis/ale"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/kojimagai/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -199,8 +204,12 @@ _G.packer_plugins = {
     path = "/Users/kojimagai/.local/share/nvim/site/pack/packer/start/vim-prettier",
     url = "https://github.com/prettier/vim-prettier"
   },
+  ["vim-pug"] = {
+    loaded = true,
+    path = "/Users/kojimagai/.local/share/nvim/site/pack/packer/start/vim-pug",
+    url = "https://github.com/digitaltoad/vim-pug"
+  },
   ["vim-vsnip"] = {
-    config = { "\27LJ\2\nˆ\1\0\4\v\0\6\0\0195\4\0\0\15\0\3\0X\5\a€6\5\1\0009\5\2\5'\a\3\0\18\b\4\0\18\t\3\0B\5\4\2\18\4\5\0006\5\1\0009\5\4\0059\5\5\5\18\a\0\0\18\b\1\0\18\t\2\0\18\n\4\0B\5\5\1K\0\1\0\20nvim_set_keymap\bapi\nforce\15tbl_extend\bvim\1\0\1\fnoremap\2¢\4\1\0\a\0\19\00023\0\0\0\18\1\0\0'\3\1\0'\4\2\0'\5\3\0005\6\4\0B\1\5\1\18\1\0\0'\3\5\0'\4\2\0'\5\3\0005\6\6\0B\1\5\1\18\1\0\0'\3\1\0'\4\a\0'\5\b\0005\6\t\0B\1\5\1\18\1\0\0'\3\5\0'\4\a\0'\5\b\0005\6\n\0B\1\5\1\18\1\0\0'\3\1\0'\4\v\0'\5\f\0005\6\r\0B\1\5\1\18\1\0\0'\3\5\0'\4\v\0'\5\f\0005\6\14\0B\1\5\1\18\1\0\0'\3\1\0'\4\15\0'\5\16\0005\6\17\0B\1\5\1\18\1\0\0'\3\5\0'\4\15\0'\5\16\0005\6\18\0B\1\5\1K\0\1\0\1\0\1\texpr\2\1\0\1\texpr\2@vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'\f<S-Tab>\1\0\1\texpr\2\1\0\1\texpr\2>vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)' : '<Tab>'\n<Tab>\1\0\1\texpr\2\1\0\1\texpr\2Cvsnip#expandable()  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'\n<C-l>\1\0\1\texpr\2\6s\1\0\1\texpr\2;vsnip#available(1)  ? '<Plug>(vsnip-expand)' : '<C-j>'\n<C-j>\6i\0\0" },
     loaded = true,
     path = "/Users/kojimagai/.local/share/nvim/site/pack/packer/start/vim-vsnip",
     url = "https://github.com/hrsh7th/vim-vsnip"
@@ -213,10 +222,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: vim-vsnip
-time([[Config for vim-vsnip]], true)
-try_loadstring("\27LJ\2\nˆ\1\0\4\v\0\6\0\0195\4\0\0\15\0\3\0X\5\a€6\5\1\0009\5\2\5'\a\3\0\18\b\4\0\18\t\3\0B\5\4\2\18\4\5\0006\5\1\0009\5\4\0059\5\5\5\18\a\0\0\18\b\1\0\18\t\2\0\18\n\4\0B\5\5\1K\0\1\0\20nvim_set_keymap\bapi\nforce\15tbl_extend\bvim\1\0\1\fnoremap\2¢\4\1\0\a\0\19\00023\0\0\0\18\1\0\0'\3\1\0'\4\2\0'\5\3\0005\6\4\0B\1\5\1\18\1\0\0'\3\5\0'\4\2\0'\5\3\0005\6\6\0B\1\5\1\18\1\0\0'\3\1\0'\4\a\0'\5\b\0005\6\t\0B\1\5\1\18\1\0\0'\3\5\0'\4\a\0'\5\b\0005\6\n\0B\1\5\1\18\1\0\0'\3\1\0'\4\v\0'\5\f\0005\6\r\0B\1\5\1\18\1\0\0'\3\5\0'\4\v\0'\5\f\0005\6\14\0B\1\5\1\18\1\0\0'\3\1\0'\4\15\0'\5\16\0005\6\17\0B\1\5\1\18\1\0\0'\3\5\0'\4\15\0'\5\16\0005\6\18\0B\1\5\1K\0\1\0\1\0\1\texpr\2\1\0\1\texpr\2@vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'\f<S-Tab>\1\0\1\texpr\2\1\0\1\texpr\2>vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)' : '<Tab>'\n<Tab>\1\0\1\texpr\2\1\0\1\texpr\2Cvsnip#expandable()  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'\n<C-l>\1\0\1\texpr\2\6s\1\0\1\texpr\2;vsnip#available(1)  ? '<Plug>(vsnip-expand)' : '<C-j>'\n<C-j>\6i\0\0", "config", "vim-vsnip")
-time([[Config for vim-vsnip]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

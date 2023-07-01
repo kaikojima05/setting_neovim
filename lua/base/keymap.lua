@@ -21,10 +21,8 @@ vim.opt.number = true
 vim.opt.backspace = "indent,eol,start"
 
 -- ヤンクするとクリップボードに保存される
-vim.opt.clipboard:append("unnamed")
-
--- help の日本語化
-vim.opt.helplang = "ja"
+vim.cmd('set clipboard+=unnamedplus')
+vim.opt.clipboard:append("unnamedplus")
 
 -- ノーマルモードの設定
 vim.api.nvim_set_keymap('n', '<Space>h', '^', {})
@@ -40,7 +38,7 @@ vim.api.nvim_set_keymap('n', ';dd', '"_dd', {})
 vim.api.nvim_set_keymap('n', ';dw', '"_dw', {})
 
 -- インサートモードの設定
-vim.api.nvim_set_keymap('i', 'jj', '<ESC>', {silent = true})
+vim.api.nvim_set_keymap('i', 'jj', '<ESC>', { silent = true })
 vim.api.nvim_set_keymap('i', '{', '{}<LEFT>', {})
 vim.api.nvim_set_keymap('i', '[', '[]<LEFT>', {})
 vim.api.nvim_set_keymap('i', '(', '()<LEFT>', {})

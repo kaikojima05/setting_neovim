@@ -13,9 +13,12 @@ local lsp_formatting = function(bufnr)
   })
 end
 
+local prettierd = null_ls.builtins.formatting.prettierd
+prettierd.filetypes = vim.tbl_extend("force", prettierd.filetypes or {}, { "pug" })
+
 null_ls.setup({
   sources = {
-    null_ls.builtins.formatting.prettierd.with({
+    prettierd.with({
       args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0), '--single-quote' },
       stdin = true,
     }),

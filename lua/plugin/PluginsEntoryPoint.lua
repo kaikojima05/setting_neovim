@@ -6,9 +6,11 @@ require('plugin.nullLs')
 require('plugin.pugLint')
 require('plugin.telescope')
 require('plugin.treesitter')
-require('lspconfig').tailwindcss.setup {}
+require('plugin.vsnip')
+
 
 return {
+  vsnip = vsnip,
   bufferline = bufferline,
   cmp = cmp,
   lsp = lsp,
