@@ -26,5 +26,9 @@ require("plugin.PluginsEntoryPoint")
 -- Gitマーカーの設定
 require('gitsigns').setup {}
 
+-- vim.cmd の登録
 vim.cmd('language en_US')
 vim.cmd('language messages en_US')
+vim.cmd("command! -nargs=1 ReplaceFromCursor lua require('base.replaceFunction').replace_from_cursor(<q-args>)")
+vim.cmd("command! -nargs=1 ReplaceInFile lua require('base.replaceFunction').replace_in_file(<q-args>)")
+

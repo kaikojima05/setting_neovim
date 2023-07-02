@@ -36,6 +36,10 @@ vim.api.nvim_set_keymap('n', 'vsh', '<C-w>h', {})
 vim.api.nvim_set_keymap('n', ';d', '"_d', {})
 vim.api.nvim_set_keymap('n', ';dd', '"_dd', {})
 vim.api.nvim_set_keymap('n', ';dw', '"_dw', {})
+vim.api.nvim_set_keymap('n', ';dl', '"_dl', {})
+vim.api.nvim_set_keymap('n', 'le', 'b', {})
+vim.api.nvim_set_keymap('n', ':rf', ':ReplaceFromCursor ', { noremap = true })
+vim.api.nvim_set_keymap('n', ':ri', ':ReplaceInFile ', { noremap = true })
 
 -- インサートモードの設定
 vim.api.nvim_set_keymap('i', 'jj', '<ESC>', { silent = true })
