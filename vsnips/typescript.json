@@ -19,56 +19,6 @@
       "} "
     ]
   },
-  "getStaticProps": {
-    "prefix": "gspr",
-    "body": [
-      "export const getStaticProps = async () => {",
-      "  const works = await $1();",
-      "",
-      "  return {",
-      "    props: {",
-      "      $2",
-      "    },",
-      "  };",
-      "};"
-    ]
-  },
-  "useState": {
-    "prefix": "us",
-    "body": ["const [$1, $2] = useState($3)"]
-  },
-  "useMemo": {
-    "prefix": "um",
-    "body": ["useMemo(() => {$1}, [$2])"]
-  },
-  "useCallback": {
-    "prefix": "uc",
-    "body": ["useCallback(() => {$1}, [$2])"]
-  },
-  "useEffect": {
-    "prefix": "ue",
-    "body": ["useEffect(() => {$1}, [$2])"]
-  },
-  "useRef": {
-    "prefix": "ur",
-    "body": ["const $1 = useRef(null)"]
-  },
-  "useContext": {
-    "prefix": "ux",
-    "body": ["const $1 = useContext($2)"]
-  },
-  "createContext": {
-    "prefix": "cc",
-    "body": [
-      "type $1Props = {",
-      "  $2",
-      "}",
-      "",
-      "export const $2 = createContext<Props>({",
-      "  $3",
-      "})"
-    ]
-  },
   "React import": {
     "prefix": "imf",
     "body": ["import $1 from '@/$2'"]
@@ -77,10 +27,6 @@
     "prefix": "imc",
     "body": ["import { $1 } from '@/$2'"]
   },
-  "React import hooks": {
-    "prefix": "imh",
-    "body": ["import { $1 } from 'react'"]
-  },
   "React import types": {
     "prefix": "imt",
     "body": ["import type { $1 } from '@/$2'"]
@@ -88,10 +34,6 @@
   "import ClassNames": {
     "prefix": "imcs",
     "body": ["import classNames from 'classnames'"]
-  },
-  "Next.js import": {
-    "prefix": "imn",
-    "body": ["import { $1 } from 'next/$2'"]
   },
   "type Props": {
     "prefix": "tp",

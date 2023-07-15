@@ -8,6 +8,8 @@ vim.opt.swapfile = false
 -- encoding
 vim.opt.encoding = "utf-8"
 vim.scriptencoding = "utf-8"
+vim.fileencoding = { "utf-8", "latin1" }
+os.execute("export LANG=en_US.UTF-8")
 
 -- インデントの設定
 vim.opt.list = false
@@ -21,8 +23,7 @@ vim.opt.number = true
 vim.opt.backspace = "indent,eol,start"
 
 -- ヤンクするとクリップボードに保存される
-vim.cmd('set clipboard+=unnamedplus')
-vim.opt.clipboard:append("unnamedplus")
+vim.api.nvim_set_option('clipboard', 'unnamedplus')
 
 -- ノーマルモードの設定
 vim.api.nvim_set_keymap('n', '<Space>h', '^', {})
