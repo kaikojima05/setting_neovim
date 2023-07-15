@@ -11,7 +11,6 @@ require 'lspconfig'.lua_ls.setup {
   cmd = { "/Users/kojimagai/lua-language-server/bin/lua-language-server", "-E",
     "/Users/kojimagai/lua-language-server/main.lua" },
 }
-
 require('lspconfig').tailwindcss.setup {
   cmd = { "tailwindcss-language-server", "--stdio" },
   filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "pug" },
