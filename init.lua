@@ -1,3 +1,4 @@
+-- Vsnips で登録したファイルの言語内容
 vim.g.vsnip_filetypes = {
   javascript = { 'javascript', 'html' },
   javascriptreact = { 'javascriptreact', 'javascript', 'html' },
