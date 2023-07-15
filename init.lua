@@ -6,6 +6,7 @@ vim.g.vsnip_filetypes = {
   typescriptreact = { 'typescriptreact', 'typescript', 'html' },
 }
 
+-- lspconfig の設定
 require 'lspconfig'.lua_ls.setup {
   cmd = { "/Users/kojimagai/lua-language-server/bin/lua-language-server", "-E",
     "/Users/kojimagai/lua-language-server/main.lua" },
