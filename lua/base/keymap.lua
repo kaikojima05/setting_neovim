@@ -20,6 +20,7 @@ vim.opt.expandtab = true
 
 -- 行番号
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.backspace = "indent,eol,start"
 
 -- ヤンクするとクリップボードに保存される
@@ -47,10 +48,12 @@ vim.api.nvim_set_keymap('i', 'jj', '<ESC>', { silent = true })
 vim.api.nvim_set_keymap('i', '{', '{}<LEFT>', {})
 vim.api.nvim_set_keymap('i', '[', '[]<LEFT>', {})
 vim.api.nvim_set_keymap('i', '(', '()<LEFT>', {})
+vim.api.nvim_set_keymap('i', '<', '<><LEFT>', {})
 vim.api.nvim_set_keymap('i', '"', '""<LEFT>', {})
 vim.api.nvim_set_keymap('i', "'", "''<LEFT>", {})
 vim.api.nvim_set_keymap('i', ',', ',<Space>', {})
 vim.api.nvim_set_keymap('i', ':', ':<Space>', {})
+vim.api.nvim_set_keymap('i', 'kk', '<ESC>ea', {})
 
 -- ヴィジュアルモードの設定
 vim.api.nvim_set_keymap('v', ';d', '"_d', {})
