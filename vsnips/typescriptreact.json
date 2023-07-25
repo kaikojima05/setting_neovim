@@ -35,14 +35,14 @@
   },
   "useState": {
     "prefix": "us",
-    "body": ["const [$1, $2] = useState($3)"]
+    "body": ["const [$1, set$2] = useState($3)"]
   },
   "useMemo": {
     "prefix": "um",
     "body": ["useMemo(() => {$1}, [$2])"]
   },
   "useCallback": {
-    "prefix": "uc",
+    "prefix": "uf",
     "body": ["useCallback(() => {$1}, [$2])"]
   },
   "useEffect": {
@@ -54,7 +54,7 @@
     "body": ["const $1 = useRef(null)"]
   },
   "useContext": {
-    "prefix": "ux",
+    "prefix": "uc",
     "body": ["const $1 = useContext($2)"]
   },
   "createContext": {
@@ -69,6 +69,10 @@
       "})"
     ]
   },
+  "Simple Import": {
+    "prefix": "im", 
+    "body": ["import $1 from '$2"]
+  }, 
   "React import": {
     "prefix": "imf",
     "body": ["import $1 from '@/$2'"]
@@ -103,7 +107,7 @@
   },
   "if": {
     "prefix": "if",
-    "body": ["if ($1) { $2 }"]
+    "body": ["if ($1) {$2}"]
   },
   "else if": {
     "prefix": "elif",

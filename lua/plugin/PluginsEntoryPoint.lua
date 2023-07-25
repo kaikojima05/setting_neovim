@@ -19,5 +19,5 @@ return {
   pugLint = pugLint,
   telescope = telescope,
   treesitter = treesitter,
-  lspconfig = lspconfig
+  lspconfig = lspconfig,
 }

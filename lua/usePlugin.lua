@@ -45,6 +45,20 @@ packer.startup({
     use 'digitaltoad/vim-pug'
     use 'dense-analysis/ale'
     use 'nvim-lua/plenary.nvim'
+    use({
+      'yutkat/taskrun.nvim',
+      config = function() require("taskrun").setup() end
+    })
+    use({ 'rcarriga/nvim-notify' })
+    use "lukas-reineke/indent-blankline.nvim"
+    use {
+      'numToStr/Comment.nvim',
+      config = function()
+        require('Comment').setup()
+      end
+    }
+    use 'bkad/CamelCaseMotion'
+    use 'sidebar-nvim/sidebar.nvim'
   end,
   config = {
     display = {

@@ -5,6 +5,9 @@ require('base.lspkind')
 require('base.neosolarized')
 require('base.keymap')
 require('base.highlights')
+require('base.indentLine')
+require('base.camelCaseMotion')
+require('base.sidebarNvim')
 local replaceFunction = require('base.replaceFunction')
 
 return {
@@ -16,5 +19,8 @@ return {
   lspkind = lspkind,
   neosolarized = neosolarized,
   keymap = keymap,
-  highlights = highlights
+  highlights = highlights,
+  indentLine = indentLine,
+  camelCaseMotion = camelCaseMotion,
+  sidebarNvim = sidebarNvim
 }

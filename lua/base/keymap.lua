@@ -42,18 +42,18 @@ vim.api.nvim_set_keymap('n', ';dl', '"_dl', {})
 vim.api.nvim_set_keymap('n', 'le', 'b', {})
 vim.api.nvim_set_keymap('n', ':rf', ':ReplaceFromCursor ', { noremap = true })
 vim.api.nvim_set_keymap('n', ':ri', ':ReplaceInFile ', { noremap = true })
+vim.api.nvim_set_keymap('n', 'term', ':terminal<CR>', {})
 
 -- インサートモードの設定
 vim.api.nvim_set_keymap('i', 'jj', '<ESC>', { silent = true })
 vim.api.nvim_set_keymap('i', '{', '{}<LEFT>', {})
 vim.api.nvim_set_keymap('i', '[', '[]<LEFT>', {})
 vim.api.nvim_set_keymap('i', '(', '()<LEFT>', {})
-vim.api.nvim_set_keymap('i', '<', '<><LEFT>', {})
 vim.api.nvim_set_keymap('i', '"', '""<LEFT>', {})
 vim.api.nvim_set_keymap('i', "'", "''<LEFT>", {})
 vim.api.nvim_set_keymap('i', ',', ',<Space>', {})
 vim.api.nvim_set_keymap('i', ':', ':<Space>', {})
-vim.api.nvim_set_keymap('i', 'kk', '<ESC>ea', {})
+vim.api.nvim_set_keymap('i', 'kk', '<ESC>la', {})
 
 -- ヴィジュアルモードの設定
 vim.api.nvim_set_keymap('v', ';d', '"_d', {})
