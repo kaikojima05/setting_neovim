@@ -26,6 +26,9 @@ vim.opt.backspace = "indent,eol,start"
 -- ヤンクするとクリップボードに保存される
 vim.api.nvim_set_option('clipboard', 'unnamedplus')
 
+-- ターミナルモードの設定
+vim.api.nvim_set_keymap('t', 'jj', '<C-\\><C-n>', { noremap = true })
+
 -- ノーマルモードの設定
 vim.api.nvim_set_keymap('n', '<Space>h', '^', {})
 vim.api.nvim_set_keymap('n', '<Space>l', '$', {})

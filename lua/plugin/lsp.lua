@@ -166,6 +166,7 @@ saga.setup {
   server_filetype_map = {
     typescript = 'typescript',
     javascript = 'javascript',
+    pug = 'pug',
     php = 'php'
   }
 }
