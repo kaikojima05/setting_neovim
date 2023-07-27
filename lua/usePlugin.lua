@@ -2,7 +2,7 @@ local packer = require('packer')
 local g = vim.g
 
 packer.startup({
-  function()
+  function(use)
     use 'wbthomason/packer.nvim'
     use 'nvim-treesitter/nvim-treesitter'
     use { 'prettier/vim-prettier', run = 'npm install' }
@@ -38,17 +38,9 @@ packer.startup({
         require('plugin.vsnip')
       end
     }
-    use {
-      "williamboman/mason.nvim",
-      run = ":MasonUpdate" -- :MasonUpdate updates registry contents
-    }
     use 'digitaltoad/vim-pug'
     use 'dense-analysis/ale'
     use 'nvim-lua/plenary.nvim'
-    use({
-      'yutkat/taskrun.nvim',
-      config = function() require("taskrun").setup() end
-    })
     use({ 'rcarriga/nvim-notify' })
     use "lukas-reineke/indent-blankline.nvim"
     use {
@@ -59,6 +51,8 @@ packer.startup({
     }
     use 'bkad/CamelCaseMotion'
     use 'sidebar-nvim/sidebar.nvim'
+    use 'mg979/vim-visual-multi'
+    use "williamboman/mason.nvim"
   end,
   config = {
     display = {
