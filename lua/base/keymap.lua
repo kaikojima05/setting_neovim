@@ -28,6 +28,16 @@ vim.api.nvim_set_option('clipboard', 'unnamedplus')
 
 -- ターミナルモードの設定
 vim.api.nvim_set_keymap('t', 'jj', '<C-\\><C-n>', { noremap = true })
+vim.cmd [[
+  command! -nargs=* T call v:lua.SplitTerm(<f-args>)
+]]
+
+function _G.SplitTerm(command)
+  local height = math.ceil(vim.o.lines * 0.3)
+  vim.cmd("botright " .. height .. "split")
+  vim.cmd("terminal " .. (command or ''))
+  vim.cmd("startinsert")
+end
 
 -- ノーマルモードの設定
 vim.api.nvim_set_keymap('n', '<Space>h', '^', {})
