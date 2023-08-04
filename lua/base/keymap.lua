@@ -1,3 +1,6 @@
+-- insert と visual モードでのキーマップを設定する
+local opts = { noremap = true, silent = true, replace_keycodes = false }
+
 -- ターミナルが256色設定できるようにする
 vim.opt.termguicolors = true
 

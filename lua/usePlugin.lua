@@ -52,6 +52,7 @@ packer.startup({
     use 'bkad/CamelCaseMotion'
     use 'mg979/vim-visual-multi'
     use "williamboman/mason.nvim"
+    use "github/copilot.vim"
   end,
   config = {
     display = {
