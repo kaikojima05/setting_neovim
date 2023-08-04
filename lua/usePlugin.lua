@@ -6,8 +6,8 @@ packer.startup({
     use 'wbthomason/packer.nvim'
     use 'nvim-treesitter/nvim-treesitter'
     use { 'prettier/vim-prettier', run = 'npm install' }
-    use 'svrana/neosolarized.nvim'
     use 'tjdevries/colorbuddy.nvim'
+    use "neanias/everforest-nvim"
     use {
       'nvim-lualine/lualine.nvim',
       requires = { 'nvim-tree/nvim-web-devicons', opt = true }

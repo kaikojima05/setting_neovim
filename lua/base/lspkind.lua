@@ -1,7 +1,7 @@
 local status, lspkind = pcall(require, "lspkind")
 if not status then
-    print("Error: Could not import 'lspkind'")
-    return
+  print("Error: Could not import 'lspkind'")
+  return
 end
 
 lspkind.init({

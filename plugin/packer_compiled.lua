@@ -110,6 +110,11 @@ _G.packer_plugins = {
     path = "/Users/kojimagai/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
     url = "https://github.com/tjdevries/colorbuddy.nvim"
   },
+  ["everforest-nvim"] = {
+    loaded = true,
+    path = "/Users/kojimagai/.local/share/nvim/site/pack/packer/start/everforest-nvim",
+    url = "https://github.com/neanias/everforest-nvim"
+  },
   ["git.nvim"] = {
     loaded = true,
     path = "/Users/kojimagai/.local/share/nvim/site/pack/packer/start/git.nvim",
@@ -144,11 +149,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/kojimagai/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["neosolarized.nvim"] = {
-    loaded = true,
-    path = "/Users/kojimagai/.local/share/nvim/site/pack/packer/start/neosolarized.nvim",
-    url = "https://github.com/svrana/neosolarized.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,

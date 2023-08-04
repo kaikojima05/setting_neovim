@@ -2,12 +2,12 @@ require('base.autopairs')
 require('base.autotag')
 require('base.git')
 require('base.lspkind')
-require('base.neosolarized')
 require('base.keymap')
 require('base.highlights')
 require('base.indentLine')
 require('base.camelCaseMotion')
 require('base.sidebarNvim')
+require('base.everforest')
 local replaceFunction = require('base.replaceFunction')
 
 return {
@@ -22,5 +22,6 @@ return {
   highlights = highlights,
   indentLine = indentLine,
   camelCaseMotion = camelCaseMotion,
-  sidebarNvim = sidebarNvim
+  sidebarNvim = sidebarNvim,
+  everforest = everforest,
 }
