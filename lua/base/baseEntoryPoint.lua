@@ -8,6 +8,7 @@ require('base.indentLine')
 require('base.camelCaseMotion')
 require('base.sidebarNvim')
 require('base.everforest')
+require('base.terminalemulatorColor')
 local replaceFunction = require('base.replaceFunction')
 
 return {
@@ -24,4 +25,5 @@ return {
   camelCaseMotion = camelCaseMotion,
   sidebarNvim = sidebarNvim,
   everforest = everforest,
+  terminalemulatorColor = terminalemulatorColor,
 }
