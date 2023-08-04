@@ -50,7 +50,6 @@ packer.startup({
       end
     }
     use 'bkad/CamelCaseMotion'
-    use 'sidebar-nvim/sidebar.nvim'
     use 'mg979/vim-visual-multi'
     use "williamboman/mason.nvim"
   end,

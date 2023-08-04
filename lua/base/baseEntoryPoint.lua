@@ -6,7 +6,6 @@ require('base.keymap')
 require('base.highlights')
 require('base.indentLine')
 require('base.camelCaseMotion')
-require('base.sidebarNvim')
 require('base.everforest')
 require('base.terminalemulatorColor')
 local replaceFunction = require('base.replaceFunction')
@@ -23,7 +22,6 @@ return {
   highlights = highlights,
   indentLine = indentLine,
   camelCaseMotion = camelCaseMotion,
-  sidebarNvim = sidebarNvim,
   everforest = everforest,
   terminalemulatorColor = terminalemulatorColor,
 }
