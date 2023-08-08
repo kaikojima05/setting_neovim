@@ -26,7 +26,13 @@ packer.startup({
     use 'MunifTanjim/prettier.nvim'
     use 'lewis6991/gitsigns.nvim'
     use 'dinhhuy258/git.nvim'
-    use 'glepnir/lspsaga.nvim'
+    use({
+      'nvimdev/lspsaga.nvim',
+      after = 'nvim-lspconfig',
+      config = function()
+        require('lspsaga').setup({})
+      end,
+    })
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-file-browser.nvim'
     use {

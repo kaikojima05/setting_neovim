@@ -157,24 +157,3 @@ vim.diagnostic.config({
     source = "always", -- Or "if_many"
   },
 })
-
--- LSP の拡張機能
-local status_saga, saga = pcall(require, "lspsaga")
-if (not status_saga) then return end
-
-saga.setup {
-  server_filetype_map = {
-    typescript = 'typescript',
-    javascript = 'javascript',
-    pug = 'pug',
-    php = 'php'
-  }
-}
-
-local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
-vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
-vim.keymap.set('n', 'rk', '<Cmd>Lspsaga lsp_finder<CR>', opts)
-vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
-vim.keymap.set('n', 'rp', '<Cmd>Lspsaga peek_definition<CR>', opts)
-vim.keymap.set('n', 'rw', '<Cmd>Lspsaga rename<CR>', opts)
