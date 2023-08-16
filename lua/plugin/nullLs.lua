@@ -1,4 +1,3 @@
--- prettier の設定
 local status, null_ls = pcall(require, "null-ls")
 if (not status) then return end
 
@@ -22,9 +21,7 @@ null_ls.setup({
       args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0), '--single-quote' },
       stdin = true,
     }),
-    null_ls.builtins.diagnostics.eslint_d.with({
-      diagnostics_format = '[eslint] #{m}\n(#{c})'
-    }),
+    null_ls.builtins.diagnostics.eslint_d.with({}),
     null_ls.builtins.diagnostics.fish
   },
   on_attach = function(client, bufnr)
