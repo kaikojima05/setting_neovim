@@ -26,6 +26,7 @@ packer.startup({
     use 'MunifTanjim/prettier.nvim'
     use 'lewis6991/gitsigns.nvim'
     use 'dinhhuy258/git.nvim'
+    use { "kylechui/nvim-surround", tag = "*" }
     use({
       'nvimdev/lspsaga.nvim',
       after = 'nvim-lspconfig',
