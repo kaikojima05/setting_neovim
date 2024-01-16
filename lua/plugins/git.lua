@@ -1,4 +1,4 @@
--- git 
+-- git
 local status, git = pcall(require, "git")
 
 git.setup({
@@ -9,5 +9,3 @@ git.setup({
     browse = "<Leader>go",
   }
 })
-
-
