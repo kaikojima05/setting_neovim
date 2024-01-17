@@ -18,5 +18,5 @@ require("plugins.entryPoint")
 -- neovim の言語設定
 vim.cmd('language en_US.UTF-8')
 vim.cmd('language messages en_US.UTF-8')
-vim.cmd("command! -nargs=1 ReplaceFromCursor lua require('base.replaceFunction').replace_from_cursor(<q-args>)")
-vim.cmd("command! -nargs=1 ReplaceInFile lua require('base.replaceFunction').replace_in_file(<q-args>)")
+vim.cmd("command! -nargs=1 ReplaceFromCursor lua require('plugins.replaceFunction').replace_from_cursor(<q-args>)")
+vim.cmd("command! -nargs=1 ReplaceInFile lua require('plugins.replaceFunction').replace_in_file(<q-args>)")
