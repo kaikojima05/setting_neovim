@@ -69,6 +69,7 @@ if not vim.g.vscode then
   vim.api.nvim_set_keymap('i', '(', '()<LEFT>', {})
   vim.api.nvim_set_keymap('i', '"', '""<LEFT>', {})
   vim.api.nvim_set_keymap('i', "'", "''<LEFT>", {})
+  vim.api.nvim_set_keymap('i', '`', '``<LEFT>', {})
   vim.api.nvim_set_keymap('i', ',', ',<Space>', {})
   vim.api.nvim_set_keymap('i', ':', ':<Space>', {})
   vim.api.nvim_set_keymap('i', 'kk', '<ESC>la', {})
